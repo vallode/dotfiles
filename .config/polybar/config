@@ -1,0 +1,148 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/topbar1]
+monitor = ${env:MONITOR:HDMI-1}
+monitor-strict = false
+width = 100%
+height = 35
+offset-x = 0
+offset-y = 0
+padding-right = 2
+padding-left = 0
+
+underline-size = 3
+underline-color = #bc92f8
+
+background = #282828
+foreground = #ebdbb2
+
+font-0 = Source Code Pro:size=12;4
+font-1 = FontAwesome:size=16;4
+
+modules-left = i3
+modules-center = date
+modules-right = temperature cpu memory
+
+tray-position = right
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/i3]
+type = internal/i3
+
+ws-icon-0 = Web;
+ws-icon-1 = Media;
+ws-icon-2 = General;
+ws-icon-3 = Code;
+ws-icon-4 = Misc.;
+ws-icon-default = 
+
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+reverse-scroll = false
+pin-workspaces = false
+
+format = <label-state> <label-mode>
+
+label-dimmed-underline = ${BAR.background}
+
+label-focused = %icon%
+label-focused-foreground = #ebdbb2
+label-focused-background = #282828
+label-focused-overline = #cc241d
+label-focused-underline = #cc241d
+label-focused-font = 4
+label-focused-padding = 3
+
+label-unfocused = %icon%
+label-unfocused-foreground = #dd
+label-unfocused-overline = #666
+label-unfocused-underline = #666
+label-unfocused-font = 4
+label-unfocused-padding = 3
+
+label-visible = %icon%
+label-visible-foreground = #dd
+label-visible-overline = #666
+label-visible-underline = #666
+label-visible-font = 4
+label-visible-padding = 3
+
+label-mode-padding = 5
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d/%m/%y"
+
+time = "%H:%M %p"
+
+label = %date% %time%
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+
+bar-used-width = 15
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #aaff77
+bar-used-foreground-3 = #fba922
+bar-used-foreground-4 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+label-padding-left = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/wireless-network]
+type = internal/network
+interface = enp0s20f0u1
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss = <animation-packetloss> <label-connected>
+
+label-connected = %essid% %downspeed:9%
+
+label-disconnected = not connected

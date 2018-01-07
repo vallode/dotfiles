@@ -1,0 +1,74 @@
+.application-icon > svg > g > g, /* removes red background on vivaldi logo, on dark themes */
+.forward,
+.rewind,
+.next,
+.back,
+.home,
+.reload,
+.trash,
+.reader-mode ,
+.vivaldi,
+.window-buttongroup,
+.button-tabbar
+{
+	display: none !important;
+}
+
+#header {
+	height: 34px;
+}
+
+.tab-header {
+	flex: 0 0 34px !important;
+}
+
+#tabs-container {
+	height: 34px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.dialog-content {
+	color: #ebdbb2 !important;
+}
+
+.addressfield-popup-container {
+	order: 1 !important;
+}
+
+.title{
+	font-weight: bold;
+}
+
+.addressfield {
+	background-color: #ebdbb2 !important;
+	color: #282828 !important;
+	border: none !important;
+	height: 100% !important;
+	outline: 0 !important;
+}
+
+.button-addressfield {
+	fill: #282828 !important;
+}
+
+.button-addressfield svg path {
+	fill: #282828 !important;
+}
+
+.add-bookmark-container svg path {
+	fill: rgba(0,0,0,0) !important;
+}
+
+.button-addressfield:hover {
+	fill: #282828 !important;
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.addressfield:focus-within {
+	box-shadow: none !important;
+}
+
+/*sudo sed -i '1s/^/@import "custom.css";/' /opt/vivaldi/resources/vivaldi/style/common.css*/
+/* --flag-switches-begin --debug-packed-apps --silent-debugger-extension-api --flag-switches-end */
